@@ -1,28 +1,32 @@
-// import Header from './header/Header';
-// import Menu from './menu/Menu';
-// import Map from './map/Map';
-import dynamic from 'next/dynamic';
-import { useMemo } from 'react';
+import Header from './header/Header';
+import Menu from './menu/Menu';
+import About from './about/About';
+import Operation from './operation/Operation';
+import Contact from './contact/Contact';
+import Map from './map/Map';
+
 const Main: React.FC = () => {
-  const Map = useMemo(
-    () =>
-      dynamic(() => import('./map/Map'), {
-        loading: () => <p>Loading map...</p>,
-        ssr: false,
-      }),
-    []
-  );
   return (
-    <>
-      <section>{/* <Header /> */}</section>
-      <section>{/* <Menu /> */}</section>
-      {/* <section>Description</section> */}
+    <main>
+      <section>
+        <Header />
+      </section>
+      <section>
+        <Menu />
+      </section>
+      <section>
+        <About />
+      </section>
       <section>
         <Map />
       </section>
-      {/* <section>Horario</section>
-      <section>Contato</section> */}
-    </>
+      <section>
+        <Operation />
+      </section>
+      <section>
+        <Contact />
+      </section>
+    </main>
   );
 };
 

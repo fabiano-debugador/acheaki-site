@@ -1,3 +1,4 @@
+// import '../styles/global.sass';
 const Home: React.FC = () => {
   return (
     <div>

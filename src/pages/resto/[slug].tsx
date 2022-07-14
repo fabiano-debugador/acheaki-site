@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 // import { ParsedUrlQuery } from 'querystring';
-import Main from '../components/utils/profile/Main';
-import profile from '../services/profile';
+import Main from '../../components/utils/profile/Main';
+import profile from '../../services/profile';
 
 interface tt {
   slug: IProfile;

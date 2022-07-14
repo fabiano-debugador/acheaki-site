@@ -1,41 +1,42 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
-import {
-  MapContainer,
-  Marker,
-  Popup,
-  // Marker,
-  // Popup,
-  TileLayer,
-  // useMap,
-  useMapEvents,
-} from 'react-leaflet';
+// import {
+//   MapContainer,
+//   Marker,
+//   Popup,
+//   // Marker,
+//   // Popup,
+//   TileLayer,
+//   // useMap,
+//   useMapEvents,
+// } from 'react-leaflet';
 
-import classes from './Map.module.sass';
-function LocationMarker() {
-  const [position, setPosition] = useState({ lat: 51.505, lng: -0.09 });
-  const map = useMapEvents({
-    click() {
-      map.locate();
-    },
-    locationfound(e) {
-      setPosition(e.latlng);
-      map.flyTo(e.latlng, map.getZoom());
-    },
-  });
+// import classes from './Map.module.sass';
+// function LocationMarker() {
+//   const [position, setPosition] = useState({ lat: 51.505, lng: -0.09 });
+//   const map = useMapEvents({
+//     click() {
+//       map.locate();
+//     },
+//     locationfound(e) {
+//       setPosition(e.latlng);
+//       map.flyTo(e.latlng, map.getZoom());
+//     },
+//   });
 
-  return position === null ? null : (
-    <Marker position={position}>
-      <Popup>You are here</Popup>
-    </Marker>
-  );
-}
+//   return position === null ? null : (
+//     <Marker position={position}>
+//       <Popup>You are here</Popup>
+//     </Marker>
+//   );
+// }
 
 const Map: React.FC = () => {
   return (
     <>
-      <div className={classes.map}>
-        <MapContainer
+      <div>
+        <h1>Mapa</h1>
+        {/* <MapContainer
           center={{ lat: 51.505, lng: -0.09 }}
           zoom={4}
           scrollWheelZoom={false}
@@ -45,7 +46,7 @@ const Map: React.FC = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <LocationMarker />
-        </MapContainer>
+        </MapContainer> */}
         {/* <MapContainer
           center={[51.505, -0.09]}
           zoom={13}
