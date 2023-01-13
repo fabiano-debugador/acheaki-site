@@ -1,10 +1,23 @@
-// import '../styles/global.sass';
-const Home: React.FC = () => {
-  return (
-    <div>
-      <h1>ola</h1>
-    </div>
-  );
-};
+import { GetStaticProps } from "next";
+import PostPage from "../components/PostPage/PostPage";
+import { post } from "../mock/post";
+import { IPostData } from "../model/post";
 
-export default Home;
+const Post: React.FC<IPostData> = ({postData}) => {
+  return (
+    <>
+      <PostPage postData={postData} />
+    </>
+  )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = post; // Here the services will be called
+  return {
+    props: {
+      postData: posts
+    }
+  }
+}
+
+export default Post;
