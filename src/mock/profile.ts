@@ -1,4 +1,5 @@
-const profile = [
+const profiles = 
+[
   {
     _id: 1,
     idLogin: 1,
@@ -8,7 +9,8 @@ const profile = [
     slogan: 'kkk',
     description: 'kkkk',
     slug: 'ache-aki',
-  },
+  }
+  ,
   {
     _id: 2,
     idLogin: 2,
@@ -21,4 +23,16 @@ const profile = [
   },
 ];
 
-export default profile;
+const profile = 
+  {
+    _id: 1,
+    idLogin: 1,
+    idCategory: 1,
+    idCategories: 1,
+    name: 'ache aki',
+    slogan: 'kkk',
+    description: 'kkkk',
+    slug: 'ache-aki',
+  };
+
+export { profile, profiles };

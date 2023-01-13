@@ -4,12 +4,14 @@ import About from './about/About';
 import Operation from './operation/Operation';
 import Contact from './contact/Contact';
 import Map from './map/Map';
+// import { UseProfileContext } from '../../../hooks/ProfileContext';
+import { IContextProfile } from '../../../model/profile';
 
-const Main: React.FC = () => {
+const Main: React.FC<IContextProfile> = ({profile}) => {
   return (
     <main>
       <section>
-        <Header />
+        <Header profile={profile} />
       </section>
       <section>
         <Menu />
@@ -31,3 +33,4 @@ const Main: React.FC = () => {
 };
 
 export default Main;
+

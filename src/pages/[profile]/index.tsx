@@ -1,39 +1,28 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-// import { ParsedUrlQuery } from 'querystring';
+import TopMenu from '../../components/Template/TopMenu';
 import Main from '../../components/utils/profile/Main';
-import profile from '../../services/profile';
-
-interface IData {
-  profile: IProfile;
-}
-
-interface IProfile {
-  _id?: number;
-  idLogin?: number;
-  idCategory?: number;
-  idCategories?: number;
-  name?: string;
-  slogan?: string;
-  description?: string;
-  slug: string;
-}
-
+import { IContextProfile } from '../../model/profile';
+import {profile, profiles} from '../../mock/profile';
 interface ISlugProps extends ParsedUrlQuery {
   slug: string;
 }
 
-const Profile: React.FC<IData> = ({ profile }) => {
-  console.log(profile);
-  return <Main />;
+const Profile: React.FC<IContextProfile> = ({ profile }) => {
+  return (
+    <>
+      <TopMenu />
+      <Main profile={profile}/>
+    </>
+  )
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const url = ['motos'];
+  const profilesPages = profiles;
   return {
-    paths: url.map((v) => ({
+    paths: profilesPages.map((v) => ({
       params: {
-        profile: v,
+        profile: v.slug,
       },
     })),
     fallback: false,
@@ -41,16 +30,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const ss = params as ISlugProps;
-  console.log(ss);
-  const rr = profile.map((v) => {
-    return v;
-  });
-  // console.log(ss, rr);
-  // console.log(rr);
+  const profileSlug = params as ISlugProps;
+  console.log(profileSlug);
+  const profiles = profile;
+
   return {
     props: {
-      profile: rr,
+      profile: profiles
     },
   };
 };
