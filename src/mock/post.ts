@@ -13,6 +13,21 @@ const post = [
     page: 'post',
     type: 'um produto',
     likes: 0,
+  },
+  {
+    id: 2,
+    idProduct: 1,
+    price: 75000,
+    imgPerfil: "/unhaperfil.jpg",
+    description: 'meu senho',
+    date: '24/10/1989',
+    catProd: 'motos esportivas',
+    catProdSlug: 'motos-esportivas', 
+    product: 'Yamaha R1' ,
+    productSlug: 'yamaha-r1',
+    page: 'post',
+    type: 'um produto',
+    likes: 0,
   }
 ];
 
