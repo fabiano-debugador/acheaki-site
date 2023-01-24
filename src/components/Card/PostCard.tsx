@@ -9,7 +9,14 @@ const Container = styled.div`
   max-width: 600px;
   height:500px;
   background: red;
-  margin:auto;
+  margin: 40px 10px;
+
+  @media(min-width: 768px) {
+    margin: 40px auto;
+  }
+  @media(min-width: 1024px) {
+
+  }
 `;
 
 const Header = styled.div`
