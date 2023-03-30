@@ -1,9 +1,13 @@
 // import classes from './About.module.sass';
 
-const About = () => {
+import { IContextProfile } from '../../../../model/profile';
+
+const About: React.FC<IContextProfile> = ({ profile }) => {
+  console.log(profile);
   return (
     <div>
-      <h1>About</h1>
+      <h1>Quem somos</h1>
+      <p>{profile.description}</p>
     </div>
   );
 };

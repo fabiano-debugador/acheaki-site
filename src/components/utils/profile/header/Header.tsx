@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { IContextProfile } from '../../../../model/profile';
 
-const Container = styled.div`  
-  background-image: url("/capasrad.jpg");
+const Container = styled.div`
+  background-image: url('/capasrad.jpg');
   background-repeat: no-repeat;
   background-color: #cccccc;
   background-size: cover;
@@ -31,11 +31,11 @@ const Photo = styled.div`
   position: absolute;
   top: 115px;
   left: 20px;
-  background-image: url("/unhaperfil.jpg");
+  background-image: url('/unhaperfil.jpg');
   background-repeat: no-repeat;
   background-color: #cccccc;
   background-size: contain;
-  
+
   width: 50px;
   height: 50px;
 
@@ -53,14 +53,13 @@ const Photo = styled.div`
     top: 275px;
     left: 50px;
   }
-`
+`;
 
-const Header: React.FC<IContextProfile> = ({profile}) => {
-console.log(profile);
+const Header: React.FC<IContextProfile> = ({ profile }) => {
   return (
     <Container>
       <div>
-        <Description>{profile.description}</Description>
+        <Description>{profile.name}</Description>
         <Photo />
       </div>
     </Container>

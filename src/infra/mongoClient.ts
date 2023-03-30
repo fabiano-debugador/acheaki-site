@@ -6,11 +6,11 @@ export async function getMongoClient(): Promise<Db> {
   if (acheakiDB) {
     return acheakiDB;
   }
-  const mongoUri =   "mongodb+srv://fabiano:programadorPHP14@cluster0.bthdnfp.mongodb.net/test";
+  const mongoUri = process.env.DATABASE_URL;
   if (!mongoUri) {
     throw Error('No mongo URI');
   }
-  
+
   acheakiDB = new Promise((resolve, reject) => {
     const mongoClientPromise = MongoClient.connect(mongoUri);
 
@@ -19,7 +19,7 @@ export async function getMongoClient(): Promise<Db> {
         const db = cli.db('acheaki');
         resolve(db);
       })
-      .catch(error => {
+      .catch((error) => {
         reject(error);
       });
   });

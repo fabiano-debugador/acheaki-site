@@ -5,9 +5,11 @@ import Operation from './operation/Operation';
 import Contact from './contact/Contact';
 import Map from './map/Map';
 // import { UseProfileContext } from '../../../hooks/ProfileContext';
+import { WidthMediaQuery } from '../../../styles/Global';
 import { IContextProfile } from '../../../model/profile';
 
-const Main: React.FC<IContextProfile> = ({profile}) => {
+const Main: React.FC<IContextProfile> = ({ profile }) => {
+  console.log(profile);
   return (
     <main>
       <section>
@@ -16,21 +18,22 @@ const Main: React.FC<IContextProfile> = ({profile}) => {
       <section>
         <Menu />
       </section>
-      <section>
-        <About />
-      </section>
-      <section>
-        <Map />
-      </section>
-      <section>
-        <Operation />
-      </section>
-      <section>
-        <Contact />
-      </section>
+      <WidthMediaQuery>
+        <section>
+          <About profile={profile} />
+        </section>
+        <section>
+          <Map />
+        </section>
+        <section>
+          <Operation />
+        </section>
+        <section>
+          <Contact />
+        </section>
+      </WidthMediaQuery>
     </main>
   );
 };
 
 export default Main;
-

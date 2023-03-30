@@ -24,19 +24,18 @@ const Category: React.FC<IContextProduct> = ({ product, profile }) => {
         <ProductPage product={product} />
       </Container>
     </>
-  )
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { page } = context.params as ISlugProps
-  console.log(page);
+  const { page } = context.params as ISlugProps;
   // fazer a consulta para pegar categoria ou produto
   const userProfile = profile;
-  let productOBJ = {} as IProduct | IProduct[]
+  let productOBJ = {} as IProduct | IProduct[];
 
   if (page.length === 1) {
     productOBJ = products;
-  } else if(page.length === 2) {
+  } else if (page.length === 2) {
     productOBJ = product;
   }
 
@@ -45,14 +44,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       redirect: {
         destination: '/login',
         permanent: false,
-      }
-    }
+      },
+    };
   }
 
   return {
     props: {
       product: productOBJ,
-      profile: userProfile
+      profile: userProfile,
     }, // will be passed to the page component as props
   };
 };

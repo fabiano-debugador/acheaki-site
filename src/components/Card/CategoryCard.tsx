@@ -23,14 +23,22 @@ const CardImage = styled.div`
   background: yellow;
 `;
 
-const CategoryCard: React.FC<ICategory> = ({category}) => {
+const CardDescription = styled.div`
+  height: 90px;
+  background: brown;
+`;
+
+const CategoryCard: React.FC<ICategory> = ({ category }) => {
   return (
     <CardStyle>
       <CardImage>
-        <Image src={category.image} alt="blah" layout='fill' />
+        <Image src={category.image} alt="blah" layout="fill" />
       </CardImage>
+      <CardDescription>
+        <p>{category.category}</p>
+      </CardDescription>
     </CardStyle>
-  )
-}
+  );
+};
 
 export default CategoryCard;

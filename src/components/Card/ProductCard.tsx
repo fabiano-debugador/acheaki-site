@@ -23,15 +23,22 @@ const CardImage = styled.div`
   background: yellow;
 `;
 
-const Card: React.FC<IProductData> = ({product}) => {
-  console.log(product);
+const CardDescription = styled.div`
+  height: 90px;
+  background: brown;
+`;
+
+const Card: React.FC<IProductData> = ({ product }) => {
   return (
     <CardStyle>
       <CardImage>
-        <Image src="/r1.jpg" alt="blah" layout='fill' />
+        <Image src="/r1.jpg" alt="blah" layout="fill" />
       </CardImage>
+      <CardDescription>
+        <p>{product.description}</p>
+      </CardDescription>
     </CardStyle>
-  )
-}
+  );
+};
 
 export default Card;

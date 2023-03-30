@@ -1,4 +1,5 @@
-import { IProductCategory } from "./categoryProduct";
+import { IAddress } from './address';
+import { IProductCategory } from './categoryProduct';
 
 export interface IData {
   profile: IProfile;
@@ -13,6 +14,7 @@ export interface IProfile {
   slogan: string;
   description: string;
   slug: string;
+  address?: IAddress;
 }
 
 export interface IContextProfile {

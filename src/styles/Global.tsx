@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Container = styled.div`
   width: 100%;
@@ -12,9 +12,20 @@ const CardContainer = styled.div`
   justify-content: center;
   gap: 20px 10px;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     gap: 20px;
   }
 `;
 
-export { Container, CardContainer }
+const WidthMediaQuery = styled.div`
+  max-width: 1180px;
+  margin: auto;
+  background: red;
+  padding: 0 20px;
+
+  @media (min-width: 1024px) {
+    padding: initial;
+  }
+`;
+
+export { Container, CardContainer, WidthMediaQuery };
