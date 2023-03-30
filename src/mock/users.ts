@@ -3,7 +3,7 @@ import { ObjectId } from 'bson';
 import { ISlugProps } from '../pages/[profile]';
 export async function getUsers() {
   const maggieDb = await getMongoClient();
-  const collection = maggieDb.collection('user');
+  const collection = maggieDb.collection('users');
   // let sortObject = {};
   const listOfUser = collection.find();
 
@@ -29,7 +29,7 @@ export async function getAllPageProfiles() {
 
 export async function getAllUserInfo(id: string) {
   const maggieDb = await getMongoClient();
-  const collection = maggieDb.collection('user');
+  const collection = maggieDb.collection('users');
 
   const listOfUser = collection.aggregate([
     {
